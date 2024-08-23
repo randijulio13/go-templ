@@ -1,0 +1,21 @@
+package layout
+
+import (
+    "github.com/randijulio13/go-templ/views/components"
+)
+
+templ Base() {
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Go Echo</title>
+			<link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+        </head>
+        <body>
+        @components.Navbar()
+            <main id="content" class="container py-4">
+                { children... }
+            </main>
+        </body>
+    </html>
+}
