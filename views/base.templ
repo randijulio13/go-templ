@@ -1,0 +1,39 @@
+package views
+
+import "github.com/randijulio13/go-templ/views/components"
+
+script Swal(icon, text, title string) {
+    swal.fire({
+        icon,
+        text,
+        title
+    })
+}
+
+templ Base(title string, successMsg, errorMsg []string) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{ title } Go Echo</title>
+			<script src="/assets/dist/index.js"></script>
+			<link rel="stylesheet" href="/assets/dist/index.css" type="text/css"/>
+		</head>
+		<body hx-boost="true">
+			<div class="spinner-border spinner-border-sm htmx-indicator" id="page-loading" role="status"></div>
+			@components.Navbar()
+			<main id="content" class="container py-4">
+				{ children... }
+			</main>
+		</body>
+		if len(errorMsg) > 0 {
+			for _, msg := range errorMsg {
+				@Swal("error", msg, "Error")
+			}
+		}
+		if len(successMsg) > 0 {
+			for _, msg := range successMsg {
+				@Swal("success", msg, "Success")
+			}
+		}
+	</html>
+}

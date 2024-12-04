@@ -8,3 +8,8 @@ import (
 func Render(e echo.Context, v templ.Component) error {
 	return v.Render(e.Request().Context(), e.Response().Writer)
 }
+
+type AlertMessage struct {
+	Type    string
+	Message string
+}

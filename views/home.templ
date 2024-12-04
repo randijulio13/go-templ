@@ -1,11 +1,7 @@
 package views
 
-import (
-	"github.com/randijulio13/go-templ/views/layout"
-)
-
-templ Home() {
-	@layout.Base() {
+templ Home(succMsgs, errMsgs []string) {
+	@Base("Home", succMsgs, errMsgs) {
 		<h1>Home</h1>
 	}
 }

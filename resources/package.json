@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass --watch ./app.scss ../assets/css/style.css"
+    "dev": "vite build --emptyOutDir --watch",
+    "build": "vite build --emptyOutDir"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "htmx.org": "^1.9.12",
+    "jquery": "^3.7.1",
+    "sweetalert2": "^11.12.4",
+    "vite": "^5.4.2"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.77.8"
   }
 }

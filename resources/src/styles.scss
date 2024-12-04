@@ -1,0 +1,21 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.htmx-indicator {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
+
+.htmx-request .htmx-indicator {
+    opacity: 1;
+}
+
+.htmx-request.htmx-indicator {
+    opacity: 1;
+}
+
+#page-loading {
+    position: absolute;
+    z-index: 9999;
+    top: 1rem;
+    right: 1rem;
+}

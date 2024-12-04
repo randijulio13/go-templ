@@ -5,4 +5,4 @@ templ:
 	@reflex -r '\.templ$$' -- sh -c 'templ generate'
 
 scss:
-	@reflex -s -r '\.scss$$' -- sh -c 'npm run build --prefix resources'
+	@reflex -s -r 'resources/.*\.(scss|js)$$' -- sh -c 'npm install --prefix resources && npm run dev --prefix resources'

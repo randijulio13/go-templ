@@ -1,0 +1,28 @@
+package views
+
+templ Register(succMsgs, errMsgs []string) {
+	@Base("Register", succMsgs, errMsgs) {
+		<div class="row">
+			<div class="col-8">
+				<div class="card">
+					<div class="card-header">Register</div>
+					<div class="card-body">
+						<form id="form-register" action="/register" method="POST" hx-indicator="#submit-loading">
+							<div class="mb-2">
+								<label for="username" class="form-label">Username</label>
+								<input type="text" class="form-control" name="username" id="username"/>
+							</div>
+							<div class="mb-2">
+								<label for="password" class="form-label">Password</label>
+								<input type="password" class="form-control" name="password" id="password"/>
+							</div>
+						</form>
+					</div>
+					<div class="card-footer">
+						<button class="btn btn-primary btn-submit" type="submit" form="form-register">Save <div class="spinner-border spinner-border-sm htmx-indicator" id="submit-loading" role="status"></div></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+}

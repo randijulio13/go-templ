@@ -1,11 +1,7 @@
 package views
 
-import (
-    "github.com/randijulio13/go-templ/views/layout"
-)
-
-templ About() {
-    @layout.Base() {
-        <h1>About</h1>
-    }
+templ About(succMsgs, errMsgs []string) {
+	@Base("About", succMsgs, errMsgs) {
+		<h1>About</h1>
+	}
 }
